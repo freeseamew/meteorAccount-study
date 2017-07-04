@@ -1,0 +1,22 @@
+<template name="mainLayout">
+  {{#if showLoadingEffectLoad}}
+    {{#transition in="fadeIn:500" out="fadeOut:500"}}
+      {{> mainLoading}}
+    {{/transition}}
+  {{/if}}
+  <div class="container">
+    {{#transition in="fadeIn:500" out="fadeOut:500"}}
+      {{> Template.dynamic template=content }}
+    {{/transition}}
+  </div>
+</template>
+
+<template name="mainLoading">
+  <div class="table y100 text_center bg-main">
+    <div class="table-cell py4">
+      <img src="images/loading-spinning-bubbles.svg" width="64" height="64" />
+      <h1 class="h1 mt2 mb0">Now loading...</h1>
+    </div>
+  </div>
+</template>
+
